@@ -1,0 +1,230 @@
+/* 🌌 Space-like animated gradient background */
+@keyframes movingBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0a0a0f, #121222, #1c1c38);
+    background-size: 200% 200%;
+    animation: movingBackground 10s infinite alternate ease-in-out;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* ✨ Floating particle effect (stars) */
+@keyframes floatingStars {
+    0% { transform: translateY(0); opacity: 0.7; }
+    100% { transform: translateY(-20px); opacity: 0.4; }
+}
+
+.particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: floatingStars 2s infinite alternate ease-in-out;
+}
+
+/* 🌌 Title with Glow */
+/* 🔹 Futuristic Neon Title */
+h1 {
+    font-size: 42px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+    background: linear-gradient(45deg, cyan, white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* 🔮 Glassmorphism Container */
+.container {
+    max-width: 500px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.3);
+    animation: fadeIn 1.5s ease-in-out forwards;
+    opacity: 0;
+}
+
+/* 🎭 Smooth fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🛸 3D Hover Effects for Inputs */
+input,select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 16px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    appearance: none; /* Fixes the dropdown icon issue */
+    cursor: pointer;
+}
+
+/* Ensure dropdown expands properly */
+select:focus {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 10px cyan;
+}
+/* Style the dropdown menu */
+select {
+    width: 100%;
+    padding: 10px;
+    background-color: #222;  /* Dark background */
+    color: #0ff;  /* Neon blue text */
+    border: 2px solid #0ff;  /* Neon border */
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    appearance: none; /* Remove default arrow styling */
+    cursor: pointer;
+}
+.progress-container {
+    width: 100%;
+    background-color: #333;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 20px;
+    background-color: #0ff;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: width 0.5s;
+}
+
+/* Style the dropdown options */
+select option {
+    background-color: #222;  /* Dark background for dropdown options */
+    color: #0ff;  /* Text color */
+    padding: 10px;
+}
+
+
+.progress-container {
+    width: 100%;
+    background-color: #333;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 20px;
+    background-color: #0ff;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: width 0.5s;
+}
+
+
+/* Fix white dropdown issue */
+select:focus {
+    outline: none;
+    border: 2px solid #00ffff;
+}
+
+
+/* Custom dropdown arrow */
+select::-ms-expand {
+    display: none; /* Removes default dropdown arrow in IE */
+}
+
+
+input:focus, select:focus {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 10px cyan;
+}
+
+/* 🕹️ 3D Animated Button */
+button {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(45deg, cyan, blue);
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+}
+
+button:hover {
+    background: linear-gradient(45deg, #00ffff, #0055ff);
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 255, 255, 0.5);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* 🚀 Floating Toggle Switch */
+.switch {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    width: 40px;
+    height: 20px;
+    background: gray;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.slider:before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    left: 2px;
+    top: 1px;
+    transition: 0.3s;
+}
+
+input:checked + .slider {
+    background: cyan;
+}
+
+input:checked + .slider:before {
+    left: 20px;
+}

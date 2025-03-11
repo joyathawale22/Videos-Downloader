@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Fonts (Poppins) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenM Video Downloader</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    
+
+    <!-- Floating Star Animation -->
+    <script>
+        for (let i = 0; i < 30; i++) {
+            let star = document.createElement("div");
+            star.className = "particle";
+            document.body.appendChild(star);
+
+            star.style.left = Math.random() * 100 + "vw";
+            star.style.top = Math.random() * 100 + "vh";
+            star.style.animationDuration = Math.random() * 3 + 2 + "s";
+        }
+    </script>
+
+    <div class="container">
+        <h1>GenM Video Downloader</h1>
+
+        <input type="text" id="videoUrl" placeholder="Enter Video URL..." />
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar">0%</div>
+        </div>
+        
+        <p id="eta">Time Remaining: Calculating...</p>
+        <p id="statusMessage"></p>
+
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar">0%</div>
+        </div>
+        
+        <p id="eta">Time Remaining: Calculating...</p>
+        <p id="speed">Speed: 0 Mbps</p>
+        <p id="statusMessage"></p>
+        
+        
+
+        <div class="options">
+            <label for="quality">Select Quality:</label>
+            <select id="quality">
+                <option value="1080">1080p</option>
+                <option value="720">720p</option>
+                <option value="480">480p</option>
+                <option value="360">360p</option>
+            </select>
+
+            <label class="switch">
+                <input type="checkbox" id="audioOnly">
+                <span class="slider"></span>
+                Audio Only (MP3)
+            </label>
+
+            <label class="switch">
+                <input type="checkbox" id="subtitles">
+                <span class="slider"></span>
+                Download Subtitles
+            </label>
+        </div>
+
+        <button id="downloadBtn">Download</button>
+
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <p id="statusMessage"></p>
+        <p id="downloadSpeed"></p> <!-- New speed display -->
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
