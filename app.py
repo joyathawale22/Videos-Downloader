@@ -83,5 +83,6 @@ def download_video():
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 500
 
-if __name__ == '__main__':
-    app.run(debug=True, threaded=True)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8080))  # Get Railway's assigned port
+    app.run(host="0.0.0.0", port=port, debug=True)
